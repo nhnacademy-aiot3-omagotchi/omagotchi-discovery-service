@@ -10,6 +10,11 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
 
+  server:
+    # Rule Engine의 초기 역할 판정 전에 최신 Registry 응답 제공
+    # 서버의 별도 Read-only Cache 지연 제거. Client Registry Fetch 지연은 별도 존재
+    use-read-only-response-cache: false
+
 management:
   endpoints:
     web:
